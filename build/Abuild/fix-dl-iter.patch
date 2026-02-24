@@ -1,0 +1,13 @@
+diff --git a/lib/gvc/gvconfig.c b/lib/gvc/gvconfig.c
+index 5d3b524..0ade8a3 100644
+--- a/lib/gvc/gvconfig.c
++++ b/lib/gvc/gvconfig.c
+@@ -270,7 +270,7 @@ static void gvconfig_write_library_config(GVC_t *gvc, char *lib_path,
+ #define DOTLIBS "/.libs"
+ 
+ #ifdef HAVE_DL_ITERATE_PHDR
+-static int line_callback(struct dl_phdr_info *info, size_t size, void *line)
++static int line_callback(const struct dl_phdr_info *info, size_t size, void *line)
+ {
+    const char *p = info->dlpi_name;
+    char *tmp = strstr(p, "/libgvc.");
