@@ -3,7 +3,7 @@
 # Maintianer: Aaron Bassett <abassett@qnx.com>
 pkgname=graphviz
 pkgver=13.1.2
-pkgrel=3
+pkgrel=${pkgrel:-0}
 pkgdesc="Graph Visualization Tools"
 url="https://www.graphviz.org/"
 arch="all"
@@ -135,6 +135,7 @@ graphs() {
 }
 
 
+options="$options ${DISABLE_CHECK:+!check}"
 sha512sums="
 4c9d03cd014c078812bf2a1b043fe841b5a1b4aa026d762bf1253effb8a0c81b5a7f2820041d7bc9ec2db4de95f831d7ebdd93c0c1c00ff5d5cf3724cc13a319  graphviz-13.1.2.tar.xz
 f4cb99e66b4cde4fbba4523960ccbed7d1561e53d5be053ffec12981eea62e9d80cc099c378e9adcb57c1bbd7970dc7877554f5427ca48f067ee9bca10ea06eb  qnx_fix.patch
